@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/poppins-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/poppins-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/poppins-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/poppins-latin-700-normal.woff2') format('woff2');
+}
+
+@theme {
+  --font-sans: 'Poppins', system-ui, sans-serif;
+
+  /* Dhee Mentorship brand palette — see Brand & Visual Identity Guide v1.0 */
+  --color-navy: #332E6C;      /* Voyage Navy — primary, 40-50% */
+  --color-navy-dark: #262151; /* darker shade for hover states */
+  --color-horizon: #2D72B9;   /* Horizon Blue — secondary/structure, 20-25% */
+  --color-horizon-light: #E8F1FA;
+  --color-cream: #F3F0E4;     /* Passport Cream — base/neutral, 20-30% */
+  --color-ink: #14161F;       /* Ink — body text */
+  --color-gold: #E3A73E;      /* Compass Gold — accent, 5-10% */
+  --color-gold-dark: #C88E2A;
+  --color-teal: #2EC4C4;      /* Skyline Teal — accent, 5-10% */
+  --color-teal-dark: #219797;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+}
