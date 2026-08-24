@@ -3,6 +3,8 @@ import PageHero from '../components/PageHero'
 import Section from '../components/Section'
 import CTAButton from '../components/CTAButton'
 import Icon from '../components/Icon'
+import Reveal from '../components/Reveal'
+import TwoTone from '../components/TwoTone'
 
 const DOCUMENT_TYPES = [
   {
@@ -65,116 +67,107 @@ export default function Apostille() {
   usePageTitle('Apostille & Attestation')
 
   return (
-    <div>
+    <div className="bg-black">
       <PageHero
         breadcrumb="Services / Apostille & Attestation"
         eyebrow="Document Legalization"
-        title="Apostille & Attestation Services"
+        titleWhite="Apostille &"
+        titleBlue="Attestation Services"
         description="Get your personal, educational, legal, and commercial documents apostilled or attested for hassle-free use anywhere in the world."
         icon="stamp"
       />
 
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="text-horizon font-semibold text-sm tracking-wide uppercase">
+          <Reveal>
+            <p className="text-accent font-semibold text-sm tracking-wide uppercase">
               What is Apostille?
             </p>
-            <h2 className="mt-2 text-3xl font-bold text-navy">
+            <h2 className="mt-2 text-3xl font-bold text-white">
               A Simple Certificate That Makes Your Documents Valid Worldwide
             </h2>
-            <p className="mt-4 text-ink/70 leading-relaxed">
+            <p className="mt-4 text-muted leading-relaxed">
               An Apostille is a form of authentication issued for documents to be used in
               countries that are members of the Hague Apostille Convention. It verifies the
               origin of a public document — such as the seal or signature of the official who
               signed it — so that it is legally recognized abroad without the need for further
               legalization.
             </p>
-            <p className="mt-4 text-ink/70 leading-relaxed">
+            <p className="mt-4 text-muted leading-relaxed">
               For countries that are not part of the convention, we handle full embassy
               attestation instead, coordinating with the relevant consulates on your behalf.
             </p>
             <div className="mt-8">
               <CTAButton size="lg">Book Free Consultation</CTAButton>
             </div>
-          </div>
+          </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-            {BENEFITS.map((b) => (
-              <div key={b.title} className="p-5 rounded-2xl bg-white border border-horizon/15 text-center">
-                <span className="mx-auto flex items-center justify-center w-11 h-11 rounded-xl bg-navy text-white">
+            {BENEFITS.map((b, i) => (
+              <Reveal key={b.title} delay={i * 80} className="p-5 rounded-2xl border border-white/8 bg-card text-center">
+                <span className="mx-auto flex items-center justify-center w-11 h-11 rounded-xl bg-accent-strong text-white">
                   <Icon name={b.icon} className="w-5 h-5" />
                 </span>
-                <h3 className="mt-3 font-semibold text-navy">{b.title}</h3>
-                <p className="mt-1.5 text-xs text-ink/70 leading-relaxed">{b.text}</p>
-              </div>
+                <h3 className="mt-3 font-semibold text-white">{b.title}</h3>
+                <p className="mt-1.5 text-xs text-muted leading-relaxed">{b.text}</p>
+              </Reveal>
             ))}
           </div>
         </div>
       </Section>
 
-      <Section className="bg-white">
-        <div className="text-center max-w-2xl mx-auto">
-          <p className="text-horizon font-semibold text-sm tracking-wide uppercase">
-            Documents We Handle
-          </p>
-          <h2 className="mt-2 text-3xl lg:text-4xl font-bold text-navy">
-            Supported Document Categories
-          </h2>
-        </div>
+      <Section>
+        <Reveal className="text-center max-w-2xl mx-auto">
+          <TwoTone white="Documents" blue="We Handle" className="text-[clamp(1.75rem,4vw,3rem)]" />
+        </Reveal>
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {DOCUMENT_TYPES.map((d) => (
-            <div key={d.title} className="p-6 rounded-2xl bg-cream border border-horizon/15">
-              <span className="flex items-center justify-center w-11 h-11 rounded-xl bg-white text-teal">
+          {DOCUMENT_TYPES.map((d, i) => (
+            <Reveal key={d.title} delay={i * 80} className="p-6 rounded-2xl border border-white/8 bg-card">
+              <span className="flex items-center justify-center w-11 h-11 rounded-xl bg-white/8 text-accent">
                 <Icon name={d.icon} className="w-5 h-5" />
               </span>
-              <h3 className="mt-4 font-semibold text-navy">{d.title}</h3>
+              <h3 className="mt-4 font-semibold text-white">{d.title}</h3>
               <ul className="mt-3 space-y-1.5">
                 {d.items.map((i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-ink/70">
-                    <Icon name="check-circle" className="w-4 h-4 mt-0.5 text-horizon shrink-0" />
+                  <li key={i} className="flex items-start gap-2 text-sm text-muted">
+                    <Icon name="check-circle" className="w-4 h-4 mt-0.5 text-accent shrink-0" />
                     {i}
                   </li>
                 ))}
               </ul>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Section>
 
       <Section>
-        <div className="text-center max-w-2xl mx-auto">
-          <p className="text-horizon font-semibold text-sm tracking-wide uppercase">
-            How It Works
-          </p>
-          <h2 className="mt-2 text-3xl lg:text-4xl font-bold text-navy">
-            Our Apostille & Attestation Process
-          </h2>
-        </div>
+        <Reveal className="text-center max-w-2xl mx-auto">
+          <TwoTone white="How It" blue="Works" className="text-[clamp(1.75rem,4vw,3rem)]" />
+        </Reveal>
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-5 gap-6">
-          {PROCESS.map((p) => (
-            <div key={p.step} className="relative p-5 rounded-2xl border border-horizon/15 bg-white">
-              <span className="text-3xl font-bold text-horizon/25">{p.step}</span>
-              <h3 className="mt-2 font-semibold text-navy text-sm">{p.title}</h3>
-              <p className="mt-1.5 text-xs text-ink/70 leading-relaxed">{p.text}</p>
-            </div>
+          {PROCESS.map((p, i) => (
+            <Reveal key={p.step} delay={i * 80} className="relative p-5 rounded-2xl border border-white/8 bg-card">
+              <span className="text-3xl font-bold text-white/15">{p.step}</span>
+              <h3 className="mt-2 font-semibold text-white text-sm">{p.title}</h3>
+              <p className="mt-1.5 text-xs text-muted leading-relaxed">{p.text}</p>
+            </Reveal>
           ))}
         </div>
       </Section>
 
-      <Section className="bg-navy">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+      <Section>
+        <Reveal className="rounded-[28px] border border-white/8 bg-card-2 p-10 lg:p-14 flex flex-col lg:flex-row items-center justify-between gap-8">
           <div className="text-center lg:text-left">
             <h2 className="text-2xl sm:text-3xl font-bold text-white">
               Need Your Documents Apostilled?
             </h2>
-            <p className="mt-2 text-white/60">
+            <p className="mt-2 text-muted">
               Send us your document details and we’ll guide you through the fastest route.
             </p>
           </div>
           <CTAButton to="/contact" size="lg" icon={null}>
             Get Started
           </CTAButton>
-        </div>
+        </Reveal>
       </Section>
     </div>
   )

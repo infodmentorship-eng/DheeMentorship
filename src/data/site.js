@@ -1,8 +1,6 @@
 export const SITE = {
   name: 'Dhee Mentorship',
-  tagline: 'From Ramanathapuram to the World',
-  phone: '+91 98765 43210',
-  phoneHref: 'tel:+919876543210',
+  tagline: 'Turn Your Global Dreams Into Reality',
   whatsapp: 'https://wa.me/919876543210',
   email: 'info.dmentorship@gmail.com',
   address: 'DHEE Mentorship, Main Bazaar Road, Ramanathapuram, Tamil Nadu 623501, India',

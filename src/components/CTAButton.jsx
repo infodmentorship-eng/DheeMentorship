@@ -11,27 +11,24 @@ export default function CTAButton({
   className = '',
 }) {
   const base =
-    'inline-flex items-center justify-center gap-2 font-semibold rounded-full transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2'
+    'inline-flex items-center justify-center gap-2 font-medium rounded-full transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-black'
   const sizes = {
     md: 'px-5 py-2.5 text-sm',
     lg: 'px-7 py-3.5 text-base',
   }
   const variants = {
-    // The brand's one CTA accent — gold, used sparingly for the single action that matters.
+    // The single accent — Google Blue, for the one action that matters.
     primary:
-      'bg-gold text-navy shadow-lg shadow-gold/25 hover:bg-gold-dark hover:shadow-xl hover:shadow-gold/30 focus-visible:ring-gold',
-    // Navy solid — for a primary action on cream/white grounds where gold is already in use nearby.
-    navy:
-      'bg-navy text-white shadow-lg shadow-navy/20 hover:bg-navy-dark focus-visible:ring-navy/40',
-    // White fill — for use on navy or gradient grounds.
+      'bg-accent-strong text-white shadow-lg shadow-accent-strong/25 hover:brightness-110 hover:shadow-xl hover:shadow-accent-strong/30 focus-visible:ring-accent-strong',
+    // Solid white pill — for contrast against blue or busy card grounds.
     secondary:
-      'bg-white text-navy hover:bg-cream focus-visible:ring-white',
-    // Outline — for use on navy or gradient grounds as a secondary action.
+      'bg-white text-black hover:bg-white/90 focus-visible:ring-white',
+    // Outline — secondary action on dark grounds.
     outline:
-      'border-2 border-white/80 text-white hover:bg-white hover:text-navy focus-visible:ring-white',
-    // Ghost — secondary action on light grounds.
+      'border border-white/25 text-white hover:bg-white hover:text-black focus-visible:ring-white/40',
+    // Ghost — tertiary text-style action.
     ghost:
-      'border-2 border-navy text-navy hover:bg-navy hover:text-white focus-visible:ring-navy/30',
+      'text-muted hover:text-white hover:bg-white/8 focus-visible:ring-white/30',
   }
   const classes = `${base} ${sizes[size]} ${variants[variant]} ${className}`
 

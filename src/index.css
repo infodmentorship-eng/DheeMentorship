@@ -1,48 +1,54 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/fonts/poppins-latin-400-normal.woff2') format('woff2');
+  src: url('/fonts/inter-latin-400-normal.woff2') format('woff2');
 }
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('/fonts/poppins-latin-500-normal.woff2') format('woff2');
+  src: url('/fonts/inter-latin-500-normal.woff2') format('woff2');
 }
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('/fonts/poppins-latin-600-normal.woff2') format('woff2');
+  src: url('/fonts/inter-latin-600-normal.woff2') format('woff2');
 }
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('/fonts/poppins-latin-700-normal.woff2') format('woff2');
+  src: url('/fonts/inter-latin-700-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/inter-latin-800-normal.woff2') format('woff2');
 }
 
 @theme {
-  --font-sans: 'Poppins', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
 
-  /* Dhee Mentorship brand palette — see Brand & Visual Identity Guide v1.0 */
-  --color-navy: #332E6C;      /* Voyage Navy — primary, 40-50% */
-  --color-navy-dark: #262151; /* darker shade for hover states */
-  --color-horizon: #2D72B9;   /* Horizon Blue — secondary/structure, 20-25% */
-  --color-horizon-light: #E8F1FA;
-  --color-cream: #F3F0E4;     /* Passport Cream — base/neutral, 20-30% */
-  --color-ink: #14161F;       /* Ink — body text */
-  --color-gold: #E3A73E;      /* Compass Gold — accent, 5-10% */
-  --color-gold-dark: #C88E2A;
-  --color-teal: #2EC4C4;      /* Skyline Teal — accent, 5-10% */
-  --color-teal-dark: #219797;
+  /* Strict palette — pure black ground, near-black cards, single blue accent */
+  --color-canvas: #000000;
+  --color-card: #0D0D0D;
+  --color-card-2: #111111;
+  --color-pill: #1F1F1F;
+  --color-muted: #9AA0A6;
+  --color-accent: #4C8DF6;      /* links / small highlights */
+  --color-accent-strong: #1A73E8; /* buttons / pills */
+
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
 }
 
 html {
@@ -52,6 +58,42 @@ html {
 body {
   margin: 0;
   font-family: var(--font-sans);
-  background-color: var(--color-cream);
-  color: var(--color-ink);
+  background-color: var(--color-canvas);
+  color: #ffffff;
+}
+
+/* Scroll-reveal: fade in + rise, IntersectionObserver-driven, transform/opacity only */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 500ms var(--ease-standard), transform 500ms var(--ease-standard);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
