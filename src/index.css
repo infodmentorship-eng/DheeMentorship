@@ -36,17 +36,35 @@
   src: url('/fonts/inter-latin-800-normal.woff2') format('woff2');
 }
 
+:root {
+  /* Horizon Blue dark theme — literal tokens for raw CSS (hero glow, etc.) */
+  --bg: #05060A;
+  --surface: #0B0D14;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #F5F7FA;
+  --text-mute: #9BA3B4;
+  --brand-1: #4F46E5; /* indigo */
+  --brand-2: #38BDF8; /* sky */
+}
+
 @theme {
   --font-sans: 'Inter', system-ui, sans-serif;
+  --font-heading: 'General Sans', 'Inter Tight', system-ui, sans-serif;
 
-  /* Strict palette — pure black ground, near-black cards, single blue accent */
-  --color-canvas: #000000;
-  --color-card: #0D0D0D;
-  --color-card-2: #111111;
-  --color-pill: #1F1F1F;
-  --color-muted: #9AA0A6;
-  --color-accent: #4C8DF6;      /* links / small highlights */
-  --color-accent-strong: #1A73E8; /* buttons / pills */
+  /* Horizon Blue palette, mirrored as Tailwind tokens so existing utility
+     classes (bg-black, bg-card, text-muted, text-accent, …) repaint
+     automatically — no JSX/class changes needed anywhere. */
+  --color-black: #05060A;         /* overrides Tailwind's built-in black */
+  --color-white: #F5F7FA;         /* overrides Tailwind's built-in white → var(--text) */
+  --color-canvas: #05060A;
+  --color-card: #0B0D14;
+  --color-card-2: #0B0D14;
+  --color-pill: #0B0D14;
+  --color-muted: #9BA3B4;
+  --color-accent: #38BDF8;        /* brand-2 (sky) — links / small highlights */
+  --color-accent-strong: #4F46E5; /* brand-1 (indigo) — flat fallback for tints */
+  --color-brand-1: #4F46E5;
+  --color-brand-2: #38BDF8;
 
   --ease-standard: cubic-bezier(0.2, 0, 0, 1);
 }
@@ -58,8 +76,52 @@ html {
 body {
   margin: 0;
   font-family: var(--font-sans);
-  background-color: var(--color-canvas);
-  color: #ffffff;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Gradient text fill for the second line of two-tone headings */
+.text-gradient-brand {
+  background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Layered ambient glow — hero sections only */
+.hero-glow {
+  position: relative;
+}
+.hero-glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(ellipse 120% 80% at 20% 0%, rgba(79, 70, 229, 0.28) 0%, transparent 60%),
+    radial-gradient(ellipse 100% 60% at 80% 10%, rgba(56, 189, 248, 0.16) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(5, 6, 10, 0) 60%, var(--bg) 100%);
+  filter: blur(40px);
+}
+.hero-glow > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Sections below the hero — flat ground, hairline top separator */
+.section-separator {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 /* Scroll-reveal: fade in + rise, IntersectionObserver-driven, transform/opacity only */

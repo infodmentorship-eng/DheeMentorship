@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { NAV_LINKS, SITE } from '../data/site'
 import Icon from './Icon'
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.svg'
 
 export default function Footer() {
   return (

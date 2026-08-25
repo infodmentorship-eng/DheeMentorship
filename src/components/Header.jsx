@@ -3,7 +3,7 @@ import { NavLink, Link, useLocation } from 'react-router-dom'
 import { NAV_LINKS } from '../data/site'
 import Icon from './Icon'
 import CTAButton from './CTAButton'
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.svg'
 
 function UnderlineLink({ to, end, isActive, children, className = '' }) {
   return (

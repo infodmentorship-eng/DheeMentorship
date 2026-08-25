@@ -12,7 +12,7 @@ export default function ExpandableCard({ pill, icon, headlineWhite, headlineBlue
       <div
         className="relative h-40 sm:h-48 rounded-2xl overflow-hidden flex items-center justify-center"
         style={{
-          backgroundColor: '#111111',
+          backgroundColor: 'var(--surface)',
           backgroundImage: 'radial-gradient(rgba(255,255,255,0.09) 1px, transparent 1px)',
           backgroundSize: '18px 18px',
         }}
@@ -26,9 +26,9 @@ export default function ExpandableCard({ pill, icon, headlineWhite, headlineBlue
         {pill}
       </span>
 
-      <h3 className="mt-4 text-xl sm:text-2xl font-bold leading-[1.15] tracking-tight">
+      <h3 className="mt-4 text-xl sm:text-2xl font-bold">
         <span className="block text-white">{headlineWhite}</span>
-        <span className="block text-accent">{headlineBlue}</span>
+        <span className="block text-gradient-brand">{headlineBlue}</span>
       </h3>
 
       <div

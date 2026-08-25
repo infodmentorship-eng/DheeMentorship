@@ -57,7 +57,7 @@ export default function ServiceShowcase({ children }) {
           <div
             className="relative h-40 sm:h-48 rounded-2xl overflow-hidden flex items-center justify-center"
             style={{
-              backgroundColor: '#111111',
+              backgroundColor: 'var(--surface)',
               backgroundImage: 'radial-gradient(rgba(255,255,255,0.09) 1px, transparent 1px)',
               backgroundSize: '18px 18px',
             }}
