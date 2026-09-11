@@ -3,7 +3,7 @@ import { NavLink, Link, useLocation } from 'react-router-dom'
 import { NAV_LINKS } from '../data/site'
 import Icon from './Icon'
 import CTAButton from './CTAButton'
-import logo from '../assets/logo.png'
+import logo from '../assets/Dhe_Logo.svg'
 
 function UnderlineLink({ to, end, isActive, children, className = '' }) {
   return (
@@ -84,9 +84,7 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center shrink-0">
-            <span className="rounded-xl bg-white p-1 shrink-0">
-              <img src={logo} alt="Dhee Mentorship" className="h-12 lg:h-14 w-auto" />
-            </span>
+            <img src={logo} alt="Dhee Mentorship" className="h-12 lg:h-14 w-auto" />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-6 ml-8">

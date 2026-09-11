@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { NAV_LINKS, SITE } from '../data/site'
 import Icon from './Icon'
-import logo from '../assets/logo.png'
+import logo from '../assets/Dhe_Logo.svg'
 
 export default function Footer() {
   return (
@@ -9,9 +9,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         <div>
           <Link to="/" className="inline-flex items-center">
-            <span className="rounded-xl bg-white p-2 shrink-0">
-              <img src={logo} alt="Dhee Mentorship" className="h-20 w-auto" />
-            </span>
+            <img src={logo} alt="Dhee Mentorship" className="h-16 w-auto" />
           </Link>
           <p className="mt-4 text-sm leading-relaxed text-muted">
             {SITE.tagline}. Your trusted partner for study abroad, visa, attestation, and

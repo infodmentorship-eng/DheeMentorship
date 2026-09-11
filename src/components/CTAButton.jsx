@@ -17,15 +17,15 @@ export default function CTAButton({
     lg: 'px-7 py-3.5 text-base',
   }
   const variants = {
-    // The single accent — Google Blue, for the one action that matters.
+    // Primary — brand-1 → brand-2 gradient, the one action that matters.
     primary:
-      'bg-accent-strong text-white shadow-lg shadow-accent-strong/25 hover:brightness-110 hover:shadow-xl hover:shadow-accent-strong/30 focus-visible:ring-accent-strong',
-    // Solid white pill — for contrast against blue or busy card grounds.
+      'bg-[linear-gradient(90deg,var(--brand-1),var(--brand-2))] text-white shadow-[0_8px_30px_rgba(79,70,229,0.35)] hover:bg-[linear-gradient(115deg,var(--brand-1),var(--brand-2))] hover:shadow-[0_12px_40px_rgba(79,70,229,0.45)] hover:-translate-y-0.5 focus-visible:ring-[var(--brand-1)]',
+    // Solid light pill — for contrast against blue or busy card grounds.
     secondary:
       'bg-white text-black hover:bg-white/90 focus-visible:ring-white',
-    // Outline — secondary action on dark grounds.
+    // Outline — transparent + hairline border, brightens on hover.
     outline:
-      'border border-white/25 text-white hover:bg-white hover:text-black focus-visible:ring-white/40',
+      'border border-white/8 text-white hover:border-white/20 focus-visible:ring-white/40',
     // Ghost — tertiary text-style action.
     ghost:
       'text-muted hover:text-white hover:bg-white/8 focus-visible:ring-white/30',

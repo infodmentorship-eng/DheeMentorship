@@ -43,22 +43,21 @@ export default function Home() {
 
   return (
     <div>
-      {/* Hero — pure black ground, two-tone headline, single blue accent */}
-      <section className="relative overflow-hidden bg-black">
+      {/* Hero — Horizon Blue ambient glow, two-tone headline, gradient accent */}
+      <section className="hero-glow relative overflow-hidden bg-black">
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
           <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/15 text-muted text-xs font-semibold tracking-wide uppercase">
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-card border border-white/15 text-muted text-xs font-semibold tracking-[0.12em] uppercase">
               <Icon name="globe" className="w-3.5 h-3.5" />
               Study, Work &amp; Travel Abroad — Simplified
             </span>
-            <h1 className="mt-6 text-[clamp(2.5rem,5vw,4.5rem)] font-bold tracking-tight leading-[1.05]">
+            <h1 className="mt-6 text-[clamp(2rem,5.5vw,5rem)] font-bold whitespace-nowrap">
               <span className="block text-white">Turn Your Global Dreams</span>
-              <span className="block text-accent"> Into Reality</span>
+              <span className="block text-gradient-brand">Into Reality</span>
             </h1>
             <p className="mt-6 text-lg text-muted leading-relaxed max-w-xl">
-              Dhee Mentorship guides you through study abroad admissions, visa
-              assistance, apostille &amp; attestation, and certified document
-              translation — all under one trusted roof.
+              Dhee Mentorship guides you through study abroad admissions,
+              visa assistance and certified translation.
             </p>
             <div className="mt-9 flex flex-col sm:flex-row gap-4">
               <CTAButton size="lg">Book Free Consultation</CTAButton>
@@ -128,7 +127,7 @@ export default function Home() {
                     <div
                       className="h-32 flex items-center justify-center"
                       style={{
-                        backgroundColor: "#111111",
+                        backgroundColor: "var(--surface)",
                         backgroundImage:
                           "radial-gradient(rgba(255,255,255,0.09) 1px, transparent 1px)",
                         backgroundSize: "18px 18px",
